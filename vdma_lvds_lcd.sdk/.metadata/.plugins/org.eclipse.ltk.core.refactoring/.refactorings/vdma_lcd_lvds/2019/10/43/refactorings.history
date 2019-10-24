@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;vdma_lcd_lvds/src/display_ctrl&apos; to &apos;display_ctrl.c&apos;" description="Rename resource &apos;display_ctrl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/display_ctrl" name="display_ctrl.c" stamp="1571829487109" updateReferences="true"/>
+</session>
