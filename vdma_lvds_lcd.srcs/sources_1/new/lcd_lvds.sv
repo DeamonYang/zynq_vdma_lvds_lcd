@@ -52,6 +52,7 @@ module lcd_lvds#(
 	logic[LVDS_LANES-1:0]	lvds_data_in;
 	logic[DATA_IN_LEN-2:0]	lvds_data_shift[LVDS_LANES-1:0];
 	logic[2:0]				cnt;
+	logic                   lvds_clk_gen;
 	
 //	assign lvds_clk_p_o = clk_p_i;
 //	assign lvds_clk_n_o = clk_n_i; 
@@ -110,6 +111,16 @@ module lcd_lvds#(
 		end
 	endgenerate
 	
+	/*generate clock output*/
+    always_ff@(posedge clk_i or negedge rst_n_i)
+    if(!rst_n_i)
+       lvds_clk_gen <= 1'b0;
+    else if((cnt > 1) & (cnt < 5))
+       lvds_clk_gen <= 1'b0;
+    else
+       lvds_clk_gen <= 1'b1;
+	
+	
 	/*lvds output component*/
 	generate
 		genvar j;
@@ -125,12 +136,12 @@ module lcd_lvds#(
 		end
 	endgenerate
 	
-	logic out_clk;
-	BUFG BUFG_inst (
-       .O(out_clk), // 1-bit output: Clock output
-       .I(clk_p_i)  // 1-bit input: Clock input
-    );
-	
+//	ila_0 log_ila (
+//        .clk(clk_i), // input wire clk
+
+//        .probe0(lvds_data_in[2]), // input wire [0:0]  probe0  
+//        .probe1(lvds_clk_gen) // input wire [0:0]  probe1
+//    );
 	
 	
 	/*LVDS diff clock*/
@@ -140,7 +151,7 @@ module lcd_lvds#(
 	) OBUFDS_clock (
 		.O  (lvds_clk_p_o ),
 		.OB (lvds_clk_n_o ),
-		.I  (out_clk) 
+		.I  (lvds_clk_gen) 
 	);
 	
 	

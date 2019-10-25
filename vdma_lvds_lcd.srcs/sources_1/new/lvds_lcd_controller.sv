@@ -50,12 +50,13 @@ module lvds_lcd_controller#(
 	
 	clk_lvds clk_pll_lvds
    (
-		.clk_out1(lvds_hclk_x7),     // output clk_out1 = clk_sys  x7
-		.clk_out2(lvds_dv_shift_clk),     // output clk_out2 
+		.clk_hs(lvds_hclk_x7),     // output clk_out1 = clk_sys  x7
+		.clk_shift(lvds_dv_shift_clk),     // output clk_out2 
 		.resetn(rst_n_i), // input reset
 		.locked(clk_locked),       // output locked
-		.clk_in1(clk_sys_i)); // Clock in ports
-	
+		.clk_in1(clk_sys_i)); // Clock in ports 
+
+
 	 
 	lcd_lvds#(
 		.DATA_IN_LEN	(DATA_IN_LEN	) ,

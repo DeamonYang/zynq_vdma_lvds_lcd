@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Wed Oct 23 16:21:09 2019
+//Date        : Thu Oct 24 13:53:17 2019
 //Host        : DESKTOP-L1VR7A3 running 64-bit major release  (build 9200)
 //Command     : generate_target vdma_lcd_wrapper.bd
 //Design      : vdma_lcd_wrapper
@@ -31,8 +31,7 @@ module vdma_lcd_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    clk_h_out3,
-    clk_shift_lvds,
+    clk_50m,
     lcd_data,
     lcd_de,
     lcd_hs,
@@ -59,8 +58,7 @@ module vdma_lcd_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output clk_h_out3;
-  output clk_shift_lvds;
+  output clk_50m;
   output [23:0]lcd_data;
   output lcd_de;
   output lcd_hs;
@@ -88,8 +86,7 @@ module vdma_lcd_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire clk_h_out3;
-  wire clk_shift_lvds;
+  wire clk_50m;
   wire [23:0]lcd_data;
   wire lcd_de;
   wire lcd_hs;
@@ -118,8 +115,7 @@ module vdma_lcd_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .clk_h_out3(clk_h_out3),
-        .clk_shift_lvds(clk_shift_lvds),
+        .clk_50m(clk_50m),
         .lcd_data(lcd_data),
         .lcd_de(lcd_de),
         .lcd_hs(lcd_hs),

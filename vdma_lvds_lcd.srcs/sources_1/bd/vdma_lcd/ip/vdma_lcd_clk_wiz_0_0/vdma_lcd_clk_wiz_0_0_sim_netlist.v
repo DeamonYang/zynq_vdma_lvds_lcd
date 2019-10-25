@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Wed Oct 23 16:13:32 2019
+// Date        : Thu Oct 24 13:54:06 2019
 // Host        : DESKTOP-L1VR7A3 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top vdma_lcd_clk_wiz_0_0 -prefix
-//               vdma_lcd_clk_wiz_0_0_ vdma_lcd_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.srcs/sources_1/bd/vdma_lcd/ip/vdma_lcd_clk_wiz_0_0/vdma_lcd_clk_wiz_0_0_sim_netlist.v
 // Design      : vdma_lcd_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,56 +15,41 @@
 (* NotValidForBitStream *)
 module vdma_lcd_clk_wiz_0_0
    (clk_out1,
-    clk_shift_lvds,
-    clk_h_out3,
     resetn,
     locked,
     clk_in1);
   output clk_out1;
-  output clk_shift_lvds;
-  output clk_h_out3;
   input resetn;
   output locked;
   input clk_in1;
 
-  wire clk_h_out3;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
-  wire clk_shift_lvds;
   wire locked;
   wire resetn;
 
   vdma_lcd_clk_wiz_0_0_vdma_lcd_clk_wiz_0_0_clk_wiz inst
-       (.clk_h_out3(clk_h_out3),
-        .clk_in1(clk_in1),
+       (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
-        .clk_shift_lvds(clk_shift_lvds),
         .locked(locked),
         .resetn(resetn));
 endmodule
 
+(* ORIG_REF_NAME = "vdma_lcd_clk_wiz_0_0_clk_wiz" *) 
 module vdma_lcd_clk_wiz_0_0_vdma_lcd_clk_wiz_0_0_clk_wiz
    (clk_out1,
-    clk_shift_lvds,
-    clk_h_out3,
     resetn,
     locked,
     clk_in1);
   output clk_out1;
-  output clk_shift_lvds;
-  output clk_h_out3;
   input resetn;
   output locked;
   input clk_in1;
 
-  wire clk_h_out3;
-  wire clk_h_out3_vdma_lcd_clk_wiz_0_0;
   wire clk_in1;
   wire clk_in1_vdma_lcd_clk_wiz_0_0;
   wire clk_out1;
   wire clk_out1_vdma_lcd_clk_wiz_0_0;
-  wire clk_shift_lvds;
-  wire clk_shift_lvds_vdma_lcd_clk_wiz_0_0;
   wire clkfbout_buf_vdma_lcd_clk_wiz_0_0;
   wire clkfbout_vdma_lcd_clk_wiz_0_0;
   wire locked;
@@ -74,7 +59,9 @@ module vdma_lcd_clk_wiz_0_0_vdma_lcd_clk_wiz_0_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
@@ -103,30 +90,22 @@ module vdma_lcd_clk_wiz_0_0_vdma_lcd_clk_wiz_0_0_clk_wiz
        (.I(clk_out1_vdma_lcd_clk_wiz_0_0),
         .O(clk_out1));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout2_buf
-       (.I(clk_shift_lvds_vdma_lcd_clk_wiz_0_0),
-        .O(clk_shift_lvds));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout3_buf
-       (.I(clk_h_out3_vdma_lcd_clk_wiz_0_0),
-        .O(clk_h_out3));
-  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(10.500000),
+    .CLKFBOUT_MULT_F(10.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(21.000000),
+    .CLKOUT0_DIVIDE_F(20.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(21),
-    .CLKOUT1_DUTY_CYCLE(0.571000),
-    .CLKOUT1_PHASE(-49.285999),
+    .CLKOUT1_DIVIDE(1),
+    .CLKOUT1_DUTY_CYCLE(0.500000),
+    .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(3),
+    .CLKOUT2_DIVIDE(1),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
@@ -171,9 +150,9 @@ module vdma_lcd_clk_wiz_0_0_vdma_lcd_clk_wiz_0_0_clk_wiz
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
         .CLKOUT0(clk_out1_vdma_lcd_clk_wiz_0_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(clk_shift_lvds_vdma_lcd_clk_wiz_0_0),
+        .CLKOUT1(NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(clk_h_out3_vdma_lcd_clk_wiz_0_0),
+        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),

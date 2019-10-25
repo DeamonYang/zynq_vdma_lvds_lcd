@@ -518,3 +518,2196 @@ con
 ----------------End of Script----------------
 
 10:34:35 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello.elf_on_local.tcl'
+14:26:57 INFO  : Disconnected from the channel tcfchan#11.
+14:26:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:26:58 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+14:26:58 INFO  : 'jtag frequency' command is executed.
+14:26:58 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+14:26:58 INFO  : Context for 'APU' is selected.
+14:26:58 INFO  : System reset is completed.
+14:27:01 INFO  : 'after 3000' command is executed.
+14:27:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+14:27:03 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+14:27:03 INFO  : Context for 'APU' is selected.
+14:27:03 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+14:27:03 INFO  : 'configparams force-mem-access 1' command is executed.
+14:27:03 INFO  : Context for 'APU' is selected.
+14:27:03 INFO  : 'ps7_init' command is executed.
+14:27:03 INFO  : 'ps7_post_config' command is executed.
+14:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:27:03 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/hello/Debug/hello.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:27:03 INFO  : 'configparams force-mem-access 0' command is executed.
+14:27:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/hello/Debug/hello.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:27:03 INFO  : Memory regions updated for context APU
+14:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:27:04 INFO  : 'con' command is executed.
+14:27:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+14:27:04 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello.elf_on_local.tcl'
+15:31:18 INFO  : Disconnected from the channel tcfchan#12.
+15:31:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:31:19 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+15:31:19 INFO  : 'jtag frequency' command is executed.
+15:31:19 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+15:31:19 INFO  : Context for 'APU' is selected.
+15:31:20 INFO  : System reset is completed.
+15:31:23 INFO  : 'after 3000' command is executed.
+15:31:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+15:31:24 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+15:31:24 INFO  : Context for 'APU' is selected.
+15:31:24 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+15:31:24 INFO  : 'configparams force-mem-access 1' command is executed.
+15:31:24 INFO  : Context for 'APU' is selected.
+15:31:25 INFO  : 'ps7_init' command is executed.
+15:31:25 INFO  : 'ps7_post_config' command is executed.
+15:31:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:39 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:31:39 INFO  : 'configparams force-mem-access 0' command is executed.
+15:31:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:31:39 INFO  : Memory regions updated for context APU
+15:31:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:31:39 INFO  : 'con' command is executed.
+15:31:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+15:31:39 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+15:32:02 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1571902130862,  Project:1571830585766
+15:32:02 INFO  : Project lcd_dis_system_top_hw_platform_0's source hardware specification located at H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+15:32:09 INFO  : Copied contents of H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf into \lcd_dis_system_top_hw_platform_0\system.hdf.
+15:32:12 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:32:18 INFO  : 
+15:32:21 INFO  : 
+15:32:22 INFO  : Updating hardware inferred compiler options for hello.
+15:32:23 INFO  : Updating hardware inferred compiler options for vdma_lcd_lvds.
+15:32:23 INFO  : Clearing existing target manager status.
+15:32:23 INFO  : Closing and re-opening the MSS file of ther project vdma_lcd_lvds_bsp
+15:32:24 INFO  : Closing and re-opening the MSS file of ther project hello_bsp
+15:32:25 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+15:32:29 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+15:33:52 INFO  : Disconnected from the channel tcfchan#13.
+15:33:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:33:54 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+15:33:54 INFO  : 'jtag frequency' command is executed.
+15:33:54 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+15:33:54 INFO  : Context for 'APU' is selected.
+15:33:54 INFO  : System reset is completed.
+15:33:57 INFO  : 'after 3000' command is executed.
+15:33:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+15:33:58 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+15:33:59 INFO  : Context for 'APU' is selected.
+15:33:59 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+15:33:59 INFO  : 'configparams force-mem-access 1' command is executed.
+15:33:59 INFO  : Context for 'APU' is selected.
+15:33:59 INFO  : 'ps7_init' command is executed.
+15:33:59 INFO  : 'ps7_post_config' command is executed.
+15:33:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:34:13 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:34:13 INFO  : 'configparams force-mem-access 0' command is executed.
+15:34:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:34:13 INFO  : Memory regions updated for context APU
+15:34:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:34:13 INFO  : 'con' command is executed.
+15:34:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+15:34:13 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+15:45:09 INFO  : Disconnected from the channel tcfchan#14.
+15:45:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:45:10 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+15:45:10 INFO  : 'jtag frequency' command is executed.
+15:45:10 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+15:45:10 INFO  : Context for 'APU' is selected.
+15:45:11 INFO  : System reset is completed.
+15:45:14 INFO  : 'after 3000' command is executed.
+15:45:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+15:45:15 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+15:45:16 INFO  : Context for 'APU' is selected.
+15:45:16 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+15:45:16 INFO  : 'configparams force-mem-access 1' command is executed.
+15:45:16 INFO  : Context for 'APU' is selected.
+15:45:16 INFO  : 'ps7_init' command is executed.
+15:45:16 INFO  : 'ps7_post_config' command is executed.
+15:45:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:45:30 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:45:30 INFO  : 'configparams force-mem-access 0' command is executed.
+15:45:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:45:30 INFO  : Memory regions updated for context APU
+15:45:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:45:30 INFO  : 'con' command is executed.
+15:45:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+15:45:30 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:07:15 INFO  : Disconnected from the channel tcfchan#15.
+16:07:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:07:16 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:07:16 INFO  : 'jtag frequency' command is executed.
+16:07:16 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:07:16 INFO  : Context for 'APU' is selected.
+16:07:16 INFO  : System reset is completed.
+16:07:19 INFO  : 'after 3000' command is executed.
+16:07:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:07:21 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:07:21 INFO  : Context for 'APU' is selected.
+16:07:21 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:07:21 INFO  : 'configparams force-mem-access 1' command is executed.
+16:07:21 INFO  : Context for 'APU' is selected.
+16:07:21 INFO  : 'ps7_init' command is executed.
+16:07:21 INFO  : 'ps7_post_config' command is executed.
+16:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:07:36 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:07:36 INFO  : 'configparams force-mem-access 0' command is executed.
+16:07:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:07:36 INFO  : Memory regions updated for context APU
+16:07:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:07:36 INFO  : 'con' command is executed.
+16:07:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:07:36 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:09:35 INFO  : Disconnected from the channel tcfchan#16.
+16:09:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:09:36 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:09:36 INFO  : 'jtag frequency' command is executed.
+16:09:36 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:09:36 INFO  : Context for 'APU' is selected.
+16:09:36 INFO  : System reset is completed.
+16:09:39 INFO  : 'after 3000' command is executed.
+16:09:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:09:41 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:09:41 INFO  : Context for 'APU' is selected.
+16:09:41 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:09:41 INFO  : 'configparams force-mem-access 1' command is executed.
+16:09:41 INFO  : Context for 'APU' is selected.
+16:09:41 INFO  : 'ps7_init' command is executed.
+16:09:41 INFO  : 'ps7_post_config' command is executed.
+16:09:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:09:56 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:09:56 INFO  : 'configparams force-mem-access 0' command is executed.
+16:09:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:09:56 INFO  : Memory regions updated for context APU
+16:09:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:09:56 INFO  : 'con' command is executed.
+16:09:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:09:56 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:24:31 INFO  : Disconnected from the channel tcfchan#17.
+16:24:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:24:33 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:24:33 INFO  : 'jtag frequency' command is executed.
+16:24:33 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:24:33 INFO  : Context for 'APU' is selected.
+16:24:33 INFO  : System reset is completed.
+16:24:36 INFO  : 'after 3000' command is executed.
+16:24:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:24:37 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:24:37 INFO  : Context for 'APU' is selected.
+16:24:38 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:24:38 INFO  : 'configparams force-mem-access 1' command is executed.
+16:24:38 INFO  : Context for 'APU' is selected.
+16:24:38 INFO  : 'ps7_init' command is executed.
+16:24:38 INFO  : 'ps7_post_config' command is executed.
+16:24:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:24:53 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:24:53 INFO  : 'configparams force-mem-access 0' command is executed.
+16:24:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:24:53 INFO  : Memory regions updated for context APU
+16:24:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:24:53 INFO  : 'con' command is executed.
+16:24:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:24:53 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:29:50 INFO  : Disconnected from the channel tcfchan#18.
+16:29:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:29:51 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:29:51 INFO  : 'jtag frequency' command is executed.
+16:29:51 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:29:51 INFO  : Context for 'APU' is selected.
+16:29:51 INFO  : System reset is completed.
+16:29:54 INFO  : 'after 3000' command is executed.
+16:29:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:29:56 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:29:56 INFO  : Context for 'APU' is selected.
+16:29:56 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:29:56 INFO  : 'configparams force-mem-access 1' command is executed.
+16:29:56 INFO  : Context for 'APU' is selected.
+16:29:57 INFO  : 'ps7_init' command is executed.
+16:29:57 INFO  : 'ps7_post_config' command is executed.
+16:29:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:30:11 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:30:11 INFO  : 'configparams force-mem-access 0' command is executed.
+16:30:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:30:11 INFO  : Memory regions updated for context APU
+16:30:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:30:11 INFO  : 'con' command is executed.
+16:30:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:30:11 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:35:16 INFO  : Disconnected from the channel tcfchan#19.
+16:35:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:35:18 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:35:18 INFO  : 'jtag frequency' command is executed.
+16:35:18 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:35:18 INFO  : Context for 'APU' is selected.
+16:35:18 INFO  : System reset is completed.
+16:35:21 INFO  : 'after 3000' command is executed.
+16:35:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:35:23 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:35:23 INFO  : Context for 'APU' is selected.
+16:35:23 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:35:23 INFO  : 'configparams force-mem-access 1' command is executed.
+16:35:23 INFO  : Context for 'APU' is selected.
+16:35:23 INFO  : 'ps7_init' command is executed.
+16:35:23 INFO  : 'ps7_post_config' command is executed.
+16:35:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:35:38 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:35:38 INFO  : 'configparams force-mem-access 0' command is executed.
+16:35:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:35:38 INFO  : Memory regions updated for context APU
+16:35:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:35:38 INFO  : 'con' command is executed.
+16:35:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:35:38 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:53:40 INFO  : Disconnected from the channel tcfchan#20.
+16:53:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:53:41 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:53:41 INFO  : 'jtag frequency' command is executed.
+16:53:41 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:53:41 INFO  : Context for 'APU' is selected.
+16:53:41 INFO  : System reset is completed.
+16:53:44 INFO  : 'after 3000' command is executed.
+16:53:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:53:46 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:53:46 INFO  : Context for 'APU' is selected.
+16:53:46 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:53:46 INFO  : 'configparams force-mem-access 1' command is executed.
+16:53:46 INFO  : Context for 'APU' is selected.
+16:53:47 INFO  : 'ps7_init' command is executed.
+16:53:47 INFO  : 'ps7_post_config' command is executed.
+16:53:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:01 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:54:01 INFO  : 'configparams force-mem-access 0' command is executed.
+16:54:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:54:01 INFO  : Memory regions updated for context APU
+16:54:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:01 INFO  : 'con' command is executed.
+16:54:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:54:01 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+16:56:39 INFO  : Disconnected from the channel tcfchan#21.
+16:56:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:56:41 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+16:56:41 INFO  : 'jtag frequency' command is executed.
+16:56:41 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+16:56:41 INFO  : Context for 'APU' is selected.
+16:56:41 INFO  : System reset is completed.
+16:56:44 INFO  : 'after 3000' command is executed.
+16:56:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+16:56:46 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+16:56:46 INFO  : Context for 'APU' is selected.
+16:56:46 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+16:56:46 INFO  : 'configparams force-mem-access 1' command is executed.
+16:56:46 INFO  : Context for 'APU' is selected.
+16:56:46 INFO  : 'ps7_init' command is executed.
+16:56:46 INFO  : 'ps7_post_config' command is executed.
+16:56:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:57:01 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:57:01 INFO  : 'configparams force-mem-access 0' command is executed.
+16:57:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:57:01 INFO  : Memory regions updated for context APU
+16:57:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:57:01 INFO  : 'con' command is executed.
+16:57:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+16:57:01 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:01:42 INFO  : Disconnected from the channel tcfchan#22.
+17:01:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:01:44 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:01:44 INFO  : 'jtag frequency' command is executed.
+17:01:44 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:01:44 INFO  : Context for 'APU' is selected.
+17:01:44 INFO  : System reset is completed.
+17:01:47 INFO  : 'after 3000' command is executed.
+17:01:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:01:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:01:49 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:01:49 INFO  : Context for 'APU' is selected.
+17:01:49 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:01:49 INFO  : 'configparams force-mem-access 1' command is executed.
+17:01:49 INFO  : Context for 'APU' is selected.
+17:01:49 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:01:49 INFO  : 'ps7_init' command is executed.
+17:01:49 INFO  : 'jtag frequency' command is executed.
+17:01:49 INFO  : 'ps7_post_config' command is executed.
+17:01:49 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:01:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:01:49 INFO  : Context for 'APU' is selected.
+17:01:49 ERROR : Code 16 Time 1571907709423 Format {Invalid context}
+17:01:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+----------------End of Script----------------
+
+17:01:50 INFO  : System reset is completed.
+17:01:53 INFO  : 'after 3000' command is executed.
+17:01:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:01:55 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:01:55 INFO  : Context for 'APU' is selected.
+17:01:55 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:01:55 INFO  : 'configparams force-mem-access 1' command is executed.
+17:01:55 INFO  : Context for 'APU' is selected.
+17:01:55 INFO  : 'ps7_init' command is executed.
+17:01:55 INFO  : 'ps7_post_config' command is executed.
+17:01:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:02:10 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:02:10 INFO  : 'configparams force-mem-access 0' command is executed.
+17:02:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:02:10 INFO  : Memory regions updated for context APU
+17:02:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:02:11 INFO  : 'con' command is executed.
+17:02:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:02:11 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:02:51 INFO  : Disconnected from the channel tcfchan#23.
+17:02:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:02:52 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:02:52 INFO  : 'jtag frequency' command is executed.
+17:02:52 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:02:52 INFO  : Context for 'APU' is selected.
+17:02:52 INFO  : System reset is completed.
+17:02:55 INFO  : 'after 3000' command is executed.
+17:02:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:02:57 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:02:57 INFO  : Context for 'APU' is selected.
+17:02:57 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:02:57 INFO  : 'configparams force-mem-access 1' command is executed.
+17:02:57 INFO  : Context for 'APU' is selected.
+17:02:57 INFO  : 'ps7_init' command is executed.
+17:02:57 INFO  : 'ps7_post_config' command is executed.
+17:02:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:12 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:03:12 INFO  : 'configparams force-mem-access 0' command is executed.
+17:03:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:03:12 INFO  : Memory regions updated for context APU
+17:03:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:12 INFO  : 'con' command is executed.
+17:03:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:03:12 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:08:32 INFO  : Disconnected from the channel tcfchan#24.
+17:08:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:08:34 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:08:34 INFO  : 'jtag frequency' command is executed.
+17:08:34 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:08:34 INFO  : Context for 'APU' is selected.
+17:08:34 INFO  : System reset is completed.
+17:08:37 INFO  : 'after 3000' command is executed.
+17:08:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:08:38 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:08:39 INFO  : Context for 'APU' is selected.
+17:08:39 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:08:39 INFO  : 'configparams force-mem-access 1' command is executed.
+17:08:39 INFO  : Context for 'APU' is selected.
+17:08:39 INFO  : 'ps7_init' command is executed.
+17:08:39 INFO  : 'ps7_post_config' command is executed.
+17:08:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:08:54 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:08:54 INFO  : 'configparams force-mem-access 0' command is executed.
+17:08:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:08:54 INFO  : Memory regions updated for context APU
+17:08:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:08:54 INFO  : 'con' command is executed.
+17:08:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:08:54 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:20:57 INFO  : Disconnected from the channel tcfchan#25.
+17:20:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:20:58 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:20:58 INFO  : 'jtag frequency' command is executed.
+17:20:58 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:20:58 INFO  : Context for 'APU' is selected.
+17:20:58 INFO  : System reset is completed.
+17:21:01 INFO  : 'after 3000' command is executed.
+17:21:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:21:03 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:21:03 INFO  : Context for 'APU' is selected.
+17:21:03 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:21:03 INFO  : 'configparams force-mem-access 1' command is executed.
+17:21:03 INFO  : Context for 'APU' is selected.
+17:21:03 INFO  : 'ps7_init' command is executed.
+17:21:03 INFO  : 'ps7_post_config' command is executed.
+17:21:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:21:18 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:21:18 INFO  : 'configparams force-mem-access 0' command is executed.
+17:21:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:21:18 INFO  : Memory regions updated for context APU
+17:21:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:21:18 INFO  : 'con' command is executed.
+17:21:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:21:18 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:22:35 INFO  : Disconnected from the channel tcfchan#26.
+17:22:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:22:36 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:22:36 INFO  : 'jtag frequency' command is executed.
+17:22:36 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:22:36 INFO  : Context for 'APU' is selected.
+17:22:36 INFO  : System reset is completed.
+17:22:39 INFO  : 'after 3000' command is executed.
+17:22:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:22:41 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:22:41 INFO  : Context for 'APU' is selected.
+17:22:41 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:22:41 INFO  : 'configparams force-mem-access 1' command is executed.
+17:22:41 INFO  : Context for 'APU' is selected.
+17:22:41 INFO  : 'ps7_init' command is executed.
+17:22:41 INFO  : 'ps7_post_config' command is executed.
+17:22:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:22:56 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:22:56 INFO  : 'configparams force-mem-access 0' command is executed.
+17:22:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:22:56 INFO  : Memory regions updated for context APU
+17:22:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:22:56 INFO  : 'con' command is executed.
+17:22:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:22:56 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:23:38 INFO  : Disconnected from the channel tcfchan#27.
+17:23:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:23:40 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:23:40 INFO  : 'jtag frequency' command is executed.
+17:23:40 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:23:40 INFO  : Context for 'APU' is selected.
+17:23:40 INFO  : System reset is completed.
+17:23:43 INFO  : 'after 3000' command is executed.
+17:23:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:23:45 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:23:45 INFO  : Context for 'APU' is selected.
+17:23:45 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:23:45 INFO  : 'configparams force-mem-access 1' command is executed.
+17:23:45 INFO  : Context for 'APU' is selected.
+17:23:45 INFO  : 'ps7_init' command is executed.
+17:23:45 INFO  : 'ps7_post_config' command is executed.
+17:23:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:24:00 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:24:00 INFO  : 'configparams force-mem-access 0' command is executed.
+17:24:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:24:00 INFO  : Memory regions updated for context APU
+17:24:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:24:00 INFO  : 'con' command is executed.
+17:24:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:24:00 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:27:18 INFO  : Disconnected from the channel tcfchan#28.
+17:27:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:27:19 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:27:19 INFO  : 'jtag frequency' command is executed.
+17:27:19 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:27:19 INFO  : Context for 'APU' is selected.
+17:27:19 INFO  : System reset is completed.
+17:27:22 INFO  : 'after 3000' command is executed.
+17:27:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:27:24 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:27:24 INFO  : Context for 'APU' is selected.
+17:27:24 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:27:24 INFO  : 'configparams force-mem-access 1' command is executed.
+17:27:24 INFO  : Context for 'APU' is selected.
+17:27:25 INFO  : 'ps7_init' command is executed.
+17:27:25 INFO  : 'ps7_post_config' command is executed.
+17:27:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:27:39 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:27:39 INFO  : 'configparams force-mem-access 0' command is executed.
+17:27:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:27:39 INFO  : Memory regions updated for context APU
+17:27:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:27:40 INFO  : 'con' command is executed.
+17:27:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:27:40 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+17:30:15 INFO  : Disconnected from the channel tcfchan#29.
+17:30:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:30:16 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+17:30:16 INFO  : 'jtag frequency' command is executed.
+17:30:16 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+17:30:16 INFO  : Context for 'APU' is selected.
+17:30:16 INFO  : System reset is completed.
+17:30:19 INFO  : 'after 3000' command is executed.
+17:30:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+17:30:21 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+17:30:21 INFO  : Context for 'APU' is selected.
+17:30:21 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+17:30:21 INFO  : 'configparams force-mem-access 1' command is executed.
+17:30:21 INFO  : Context for 'APU' is selected.
+17:30:21 INFO  : 'ps7_init' command is executed.
+17:30:21 INFO  : 'ps7_post_config' command is executed.
+17:30:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:30:36 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:30:36 INFO  : 'configparams force-mem-access 0' command is executed.
+17:30:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:30:36 INFO  : Memory regions updated for context APU
+17:30:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:30:36 INFO  : 'con' command is executed.
+17:30:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+17:30:36 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+18:52:50 INFO  : Disconnected from the channel tcfchan#30.
+18:52:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:52:51 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+18:52:51 INFO  : 'jtag frequency' command is executed.
+18:52:51 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+18:52:51 INFO  : Context for 'APU' is selected.
+18:52:51 INFO  : System reset is completed.
+18:52:54 INFO  : 'after 3000' command is executed.
+18:52:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+18:52:56 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+18:52:56 INFO  : Context for 'APU' is selected.
+18:52:56 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+18:52:56 INFO  : 'configparams force-mem-access 1' command is executed.
+18:52:56 INFO  : Context for 'APU' is selected.
+18:52:56 INFO  : 'ps7_init' command is executed.
+18:52:56 INFO  : 'ps7_post_config' command is executed.
+18:52:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:11 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:53:11 INFO  : 'configparams force-mem-access 0' command is executed.
+18:53:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:53:11 INFO  : Memory regions updated for context APU
+18:53:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:11 INFO  : 'con' command is executed.
+18:53:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+18:53:11 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+18:53:32 INFO  : Disconnected from the channel tcfchan#31.
+18:53:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:53:33 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+18:53:33 INFO  : 'jtag frequency' command is executed.
+18:53:33 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+18:53:33 INFO  : Context for 'APU' is selected.
+18:53:33 INFO  : System reset is completed.
+18:53:36 INFO  : 'after 3000' command is executed.
+18:53:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+18:53:38 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+18:53:38 INFO  : Context for 'APU' is selected.
+18:53:38 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+18:53:38 INFO  : 'configparams force-mem-access 1' command is executed.
+18:53:38 INFO  : Context for 'APU' is selected.
+18:53:38 INFO  : 'ps7_init' command is executed.
+18:53:38 INFO  : 'ps7_post_config' command is executed.
+18:53:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:53 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:53:53 INFO  : 'configparams force-mem-access 0' command is executed.
+18:53:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:53:53 INFO  : Memory regions updated for context APU
+18:53:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:53 INFO  : 'con' command is executed.
+18:53:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+18:53:53 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+18:55:18 INFO  : Disconnected from the channel tcfchan#32.
+18:55:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:55:19 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+18:55:19 INFO  : 'jtag frequency' command is executed.
+18:55:19 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+18:55:19 INFO  : Context for 'APU' is selected.
+18:55:19 INFO  : System reset is completed.
+18:55:22 INFO  : 'after 3000' command is executed.
+18:55:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+18:55:24 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+18:55:24 INFO  : Context for 'APU' is selected.
+18:55:24 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+18:55:24 INFO  : 'configparams force-mem-access 1' command is executed.
+18:55:24 INFO  : Context for 'APU' is selected.
+18:55:24 INFO  : 'ps7_init' command is executed.
+18:55:24 INFO  : 'ps7_post_config' command is executed.
+18:55:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:39 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:55:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:55:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:55:39 INFO  : 'configparams force-mem-access 0' command is executed.
+18:55:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:55:39 INFO  : Memory regions updated for context APU
+18:55:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:39 INFO  : 'con' command is executed.
+18:55:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+18:55:39 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+18:55:39 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+18:55:39 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+18:55:39 INFO  : 'jtag frequency' command is executed.
+18:55:39 INFO  : 'jtag frequency' command is executed.
+18:55:39 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+18:55:39 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+18:55:39 INFO  : Context for 'APU' is selected.
+18:55:39 INFO  : Context for 'APU' is selected.
+18:55:40 INFO  : System reset is completed.
+18:55:40 INFO  : System reset is completed.
+18:55:43 INFO  : 'after 3000' command is executed.
+18:55:46 INFO  : 'after 3000' command is executed.
+18:55:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+18:55:47 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+18:55:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+18:55:49 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+18:55:49 INFO  : Context for 'APU' is selected.
+18:55:49 INFO  : Context for 'APU' is selected.
+18:55:49 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+18:55:49 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+18:55:49 INFO  : 'configparams force-mem-access 1' command is executed.
+18:55:49 INFO  : 'configparams force-mem-access 1' command is executed.
+18:55:49 INFO  : Context for 'APU' is selected.
+18:55:49 INFO  : Context for 'APU' is selected.
+18:55:50 INFO  : 'ps7_init' command is executed.
+18:55:50 INFO  : 'ps7_init' command is executed.
+18:55:50 INFO  : 'ps7_post_config' command is executed.
+18:55:50 INFO  : 'ps7_post_config' command is executed.
+18:55:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:05 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:19 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:19 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:56:19 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:56:19 INFO  : Memory regions updated for context APU
+18:56:19 INFO  : Memory regions updated for context APU
+18:56:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:20 INFO  : 'con' command is executed.
+18:56:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+18:56:20 ERROR : Already running
+18:56:20 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+19:04:45 INFO  : Disconnected from the channel tcfchan#33.
+19:04:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:04:47 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+19:04:47 INFO  : 'jtag frequency' command is executed.
+19:04:47 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+19:04:47 INFO  : Context for 'APU' is selected.
+19:04:47 INFO  : System reset is completed.
+19:04:50 INFO  : 'after 3000' command is executed.
+19:04:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+19:04:52 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+19:04:52 INFO  : Context for 'APU' is selected.
+19:04:52 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+19:04:52 INFO  : 'configparams force-mem-access 1' command is executed.
+19:04:52 INFO  : Context for 'APU' is selected.
+19:04:52 INFO  : 'ps7_init' command is executed.
+19:04:52 INFO  : 'ps7_post_config' command is executed.
+19:04:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:05:07 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:05:07 INFO  : 'configparams force-mem-access 0' command is executed.
+19:05:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:05:07 INFO  : Memory regions updated for context APU
+19:05:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:05:07 INFO  : 'con' command is executed.
+19:05:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+19:05:07 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+19:21:29 INFO  : Disconnected from the channel tcfchan#34.
+19:21:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:21:31 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+19:21:31 INFO  : 'jtag frequency' command is executed.
+19:21:31 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+19:21:31 INFO  : Context for 'APU' is selected.
+19:21:31 INFO  : System reset is completed.
+19:21:34 INFO  : 'after 3000' command is executed.
+19:21:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+19:21:35 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+19:21:36 INFO  : Context for 'APU' is selected.
+19:21:36 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+19:21:36 INFO  : 'configparams force-mem-access 1' command is executed.
+19:21:36 INFO  : Context for 'APU' is selected.
+19:21:36 INFO  : 'ps7_init' command is executed.
+19:21:36 INFO  : 'ps7_post_config' command is executed.
+19:21:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:21:51 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:21:51 INFO  : 'configparams force-mem-access 0' command is executed.
+19:21:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:21:51 INFO  : Memory regions updated for context APU
+19:21:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:21:51 INFO  : 'con' command is executed.
+19:21:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+19:21:51 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+19:26:52 INFO  : Disconnected from the channel tcfchan#35.
+19:26:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:26:53 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+19:26:53 INFO  : 'jtag frequency' command is executed.
+19:26:53 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+19:26:53 INFO  : Context for 'APU' is selected.
+19:26:53 INFO  : System reset is completed.
+19:26:56 INFO  : 'after 3000' command is executed.
+19:26:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+19:26:58 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+19:26:58 INFO  : Context for 'APU' is selected.
+19:26:58 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+19:26:58 INFO  : 'configparams force-mem-access 1' command is executed.
+19:26:58 INFO  : Context for 'APU' is selected.
+19:26:58 INFO  : 'ps7_init' command is executed.
+19:26:58 INFO  : 'ps7_post_config' command is executed.
+19:26:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:27:13 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:27:13 INFO  : 'configparams force-mem-access 0' command is executed.
+19:27:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:27:13 INFO  : Memory regions updated for context APU
+19:27:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:27:13 INFO  : 'con' command is executed.
+19:27:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+19:27:13 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+19:39:30 INFO  : Disconnected from the channel tcfchan#36.
+19:50:35 INFO  : Registering command handlers for SDK TCF services
+19:50:36 INFO  : Launching XSCT server: xsct.bat -interactive H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\temp_xsdb_launch_script.tcl
+19:50:39 INFO  : XSCT server has started successfully.
+19:50:39 INFO  : Successfully done setting XSCT server connection channel  
+19:50:41 INFO  : Successfully done setting SDK workspace  
+19:50:42 INFO  : Processing command line option -hwspec H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf.
+19:50:42 INFO  : Checking for hwspec changes in the project lcd_dis_system_top_hw_platform_0.
+19:50:46 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1571916494578,  Project:1571902130862
+19:50:46 INFO  : The hardware specification for project 'lcd_dis_system_top_hw_platform_0' is different from H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf.
+19:50:46 INFO  : Copied contents of H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf into \lcd_dis_system_top_hw_platform_0\system.hdf.
+19:50:48 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+19:50:53 INFO  : 
+19:50:56 INFO  : 
+19:50:57 INFO  : Updating hardware inferred compiler options for vdma_lcd_lvds.
+19:50:57 INFO  : Clearing existing target manager status.
+19:51:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:51:05 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+19:51:05 INFO  : 'jtag frequency' command is executed.
+19:51:05 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+19:51:05 INFO  : Context for 'APU' is selected.
+19:51:05 INFO  : System reset is completed.
+19:51:08 INFO  : 'after 3000' command is executed.
+19:51:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+19:51:10 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+19:51:10 INFO  : Context for 'APU' is selected.
+19:51:10 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+19:51:10 INFO  : 'configparams force-mem-access 1' command is executed.
+19:51:10 INFO  : Context for 'APU' is selected.
+19:51:11 INFO  : 'ps7_init' command is executed.
+19:51:11 INFO  : 'ps7_post_config' command is executed.
+19:51:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:51:25 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:51:25 INFO  : 'configparams force-mem-access 0' command is executed.
+19:51:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:51:25 INFO  : Memory regions updated for context APU
+19:51:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:51:26 INFO  : 'con' command is executed.
+19:51:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+19:51:26 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+19:55:13 INFO  : Disconnected from the channel tcfchan#1.
+19:55:28 INFO  : Registering command handlers for SDK TCF services
+19:55:29 INFO  : Launching XSCT server: xsct.bat -interactive H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\temp_xsdb_launch_script.tcl
+19:55:31 INFO  : XSCT server has started successfully.
+19:55:31 INFO  : Successfully done setting XSCT server connection channel  
+19:55:31 INFO  : Successfully done setting SDK workspace  
+19:55:31 INFO  : Processing command line option -hwspec H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf.
+19:55:31 INFO  : Checking for hwspec changes in the project lcd_dis_system_top_hw_platform_0.
+19:58:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:58:20 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+19:58:20 INFO  : 'jtag frequency' command is executed.
+19:58:20 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+19:58:20 INFO  : Context for 'APU' is selected.
+19:58:20 INFO  : System reset is completed.
+19:58:23 INFO  : 'after 3000' command is executed.
+19:58:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+19:58:25 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+19:58:25 INFO  : Context for 'APU' is selected.
+19:58:25 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+19:58:25 INFO  : 'configparams force-mem-access 1' command is executed.
+19:58:25 INFO  : Context for 'APU' is selected.
+19:58:25 INFO  : 'ps7_init' command is executed.
+19:58:25 INFO  : 'ps7_post_config' command is executed.
+19:58:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:58:40 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:58:40 INFO  : 'configparams force-mem-access 0' command is executed.
+19:58:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:58:40 INFO  : Memory regions updated for context APU
+19:58:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:58:40 INFO  : 'con' command is executed.
+19:58:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+19:58:40 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:04:17 INFO  : Disconnected from the channel tcfchan#1.
+20:04:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:04:18 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:04:18 INFO  : 'jtag frequency' command is executed.
+20:04:18 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:04:18 INFO  : Context for 'APU' is selected.
+20:04:18 INFO  : System reset is completed.
+20:04:21 INFO  : 'after 3000' command is executed.
+20:04:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:04:23 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:04:23 INFO  : Context for 'APU' is selected.
+20:04:24 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:04:24 INFO  : 'configparams force-mem-access 1' command is executed.
+20:04:24 INFO  : Context for 'APU' is selected.
+20:04:24 INFO  : 'ps7_init' command is executed.
+20:04:24 INFO  : 'ps7_post_config' command is executed.
+20:04:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:04:39 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:04:39 INFO  : 'configparams force-mem-access 0' command is executed.
+20:04:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:04:39 INFO  : Memory regions updated for context APU
+20:04:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:04:39 INFO  : 'con' command is executed.
+20:04:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:04:39 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:07:57 INFO  : Disconnected from the channel tcfchan#2.
+20:07:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:07:58 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:07:58 INFO  : 'jtag frequency' command is executed.
+20:07:58 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:07:58 INFO  : Context for 'APU' is selected.
+20:07:58 INFO  : System reset is completed.
+20:08:01 INFO  : 'after 3000' command is executed.
+20:08:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:08:03 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:08:03 INFO  : Context for 'APU' is selected.
+20:08:04 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:08:04 INFO  : 'configparams force-mem-access 1' command is executed.
+20:08:04 INFO  : Context for 'APU' is selected.
+20:08:05 INFO  : 'ps7_init' command is executed.
+20:08:05 INFO  : 'ps7_post_config' command is executed.
+20:08:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:19 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:08:19 INFO  : 'configparams force-mem-access 0' command is executed.
+20:08:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:08:19 INFO  : Memory regions updated for context APU
+20:08:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:08:19 INFO  : 'con' command is executed.
+20:08:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:08:19 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:09:39 INFO  : Disconnected from the channel tcfchan#3.
+20:09:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:09:40 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:09:40 INFO  : 'jtag frequency' command is executed.
+20:09:40 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:09:40 INFO  : Context for 'APU' is selected.
+20:09:40 INFO  : System reset is completed.
+20:09:43 INFO  : 'after 3000' command is executed.
+20:09:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:09:45 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:09:45 INFO  : Context for 'APU' is selected.
+20:09:46 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:09:46 INFO  : 'configparams force-mem-access 1' command is executed.
+20:09:46 INFO  : Context for 'APU' is selected.
+20:09:46 INFO  : 'ps7_init' command is executed.
+20:09:46 INFO  : 'ps7_post_config' command is executed.
+20:09:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:01 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:10:01 INFO  : 'configparams force-mem-access 0' command is executed.
+20:10:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:10:01 INFO  : Memory regions updated for context APU
+20:10:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:10:01 INFO  : 'con' command is executed.
+20:10:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:10:01 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:24:37 INFO  : Disconnected from the channel tcfchan#4.
+20:24:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:24:38 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:24:38 INFO  : 'jtag frequency' command is executed.
+20:24:38 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:24:38 INFO  : Context for 'APU' is selected.
+20:24:38 INFO  : System reset is completed.
+20:24:41 INFO  : 'after 3000' command is executed.
+20:24:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:24:43 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:24:43 INFO  : Context for 'APU' is selected.
+20:24:44 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:24:44 INFO  : 'configparams force-mem-access 1' command is executed.
+20:24:44 INFO  : Context for 'APU' is selected.
+20:24:44 INFO  : 'ps7_init' command is executed.
+20:24:44 INFO  : 'ps7_post_config' command is executed.
+20:24:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:24:59 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:24:59 INFO  : 'configparams force-mem-access 0' command is executed.
+20:24:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:24:59 INFO  : Memory regions updated for context APU
+20:24:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:24:59 INFO  : 'con' command is executed.
+20:24:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:24:59 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:25:37 INFO  : Disconnected from the channel tcfchan#5.
+20:25:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:25:38 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:25:38 INFO  : 'jtag frequency' command is executed.
+20:25:38 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:25:39 INFO  : Context for 'APU' is selected.
+20:25:39 INFO  : System reset is completed.
+20:25:42 INFO  : 'after 3000' command is executed.
+20:25:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:25:43 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:25:44 INFO  : Context for 'APU' is selected.
+20:25:45 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:25:45 INFO  : 'configparams force-mem-access 1' command is executed.
+20:25:45 INFO  : Context for 'APU' is selected.
+20:25:45 INFO  : 'ps7_init' command is executed.
+20:25:45 INFO  : 'ps7_post_config' command is executed.
+20:25:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:25:59 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:25:59 INFO  : 'configparams force-mem-access 0' command is executed.
+20:25:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:25:59 INFO  : Memory regions updated for context APU
+20:25:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:25:59 INFO  : 'con' command is executed.
+20:25:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:25:59 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:26:28 INFO  : Disconnected from the channel tcfchan#6.
+20:26:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:26:29 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:26:29 INFO  : 'jtag frequency' command is executed.
+20:26:29 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:26:29 INFO  : Context for 'APU' is selected.
+20:26:30 INFO  : System reset is completed.
+20:26:33 INFO  : 'after 3000' command is executed.
+20:26:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:26:34 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:26:34 INFO  : Context for 'APU' is selected.
+20:26:36 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:26:36 INFO  : 'configparams force-mem-access 1' command is executed.
+20:26:36 INFO  : Context for 'APU' is selected.
+20:26:36 INFO  : 'ps7_init' command is executed.
+20:26:36 INFO  : 'ps7_post_config' command is executed.
+20:26:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:26:50 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:26:50 INFO  : 'configparams force-mem-access 0' command is executed.
+20:26:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:26:50 INFO  : Memory regions updated for context APU
+20:26:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:26:51 INFO  : 'con' command is executed.
+20:26:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:26:51 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:36:14 INFO  : Disconnected from the channel tcfchan#7.
+20:36:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:36:15 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:36:15 INFO  : 'jtag frequency' command is executed.
+20:36:15 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:36:15 INFO  : Context for 'APU' is selected.
+20:36:15 INFO  : System reset is completed.
+20:36:18 INFO  : 'after 3000' command is executed.
+20:36:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:36:20 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:36:20 INFO  : Context for 'APU' is selected.
+20:36:21 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:36:21 INFO  : 'configparams force-mem-access 1' command is executed.
+20:36:21 INFO  : Context for 'APU' is selected.
+20:36:21 INFO  : 'ps7_init' command is executed.
+20:36:21 INFO  : 'ps7_post_config' command is executed.
+20:36:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:36:36 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:36:36 INFO  : 'configparams force-mem-access 0' command is executed.
+20:36:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:36:36 INFO  : Memory regions updated for context APU
+20:36:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:36:36 INFO  : 'con' command is executed.
+20:36:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:36:36 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:38:16 INFO  : Disconnected from the channel tcfchan#8.
+20:38:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:38:17 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:38:17 INFO  : 'jtag frequency' command is executed.
+20:38:17 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:38:17 INFO  : Context for 'APU' is selected.
+20:38:17 INFO  : System reset is completed.
+20:38:20 INFO  : 'after 3000' command is executed.
+20:38:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:38:22 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:38:22 INFO  : Context for 'APU' is selected.
+20:38:23 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:38:23 INFO  : 'configparams force-mem-access 1' command is executed.
+20:38:23 INFO  : Context for 'APU' is selected.
+20:38:23 INFO  : 'ps7_init' command is executed.
+20:38:23 INFO  : 'ps7_post_config' command is executed.
+20:38:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:38:38 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:38:38 INFO  : 'configparams force-mem-access 0' command is executed.
+20:38:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:38:38 INFO  : Memory regions updated for context APU
+20:38:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:38:38 INFO  : 'con' command is executed.
+20:38:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:38:38 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+20:39:29 INFO  : Disconnected from the channel tcfchan#9.
+20:39:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:39:30 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+20:39:30 INFO  : 'jtag frequency' command is executed.
+20:39:30 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+20:39:30 INFO  : Context for 'APU' is selected.
+20:39:30 INFO  : System reset is completed.
+20:39:33 INFO  : 'after 3000' command is executed.
+20:39:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+20:39:35 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+20:39:35 INFO  : Context for 'APU' is selected.
+20:39:36 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+20:39:36 INFO  : 'configparams force-mem-access 1' command is executed.
+20:39:36 INFO  : Context for 'APU' is selected.
+20:39:36 INFO  : 'ps7_init' command is executed.
+20:39:36 INFO  : 'ps7_post_config' command is executed.
+20:39:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:39:51 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:39:51 INFO  : 'configparams force-mem-access 0' command is executed.
+20:39:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:39:51 INFO  : Memory regions updated for context APU
+20:39:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:39:51 INFO  : 'con' command is executed.
+20:39:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+20:39:51 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+21:07:26 INFO  : Disconnected from the channel tcfchan#10.
+21:07:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:07:27 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+21:07:27 INFO  : 'jtag frequency' command is executed.
+21:07:27 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+21:07:27 INFO  : Context for 'APU' is selected.
+21:07:27 INFO  : System reset is completed.
+21:07:30 INFO  : 'after 3000' command is executed.
+21:07:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+21:07:32 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+21:07:32 INFO  : Context for 'APU' is selected.
+21:07:34 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+21:07:34 INFO  : 'configparams force-mem-access 1' command is executed.
+21:07:34 INFO  : Context for 'APU' is selected.
+21:07:34 INFO  : 'ps7_init' command is executed.
+21:07:34 INFO  : 'ps7_post_config' command is executed.
+21:07:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:07:49 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:07:49 INFO  : 'configparams force-mem-access 0' command is executed.
+21:07:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:07:49 INFO  : Memory regions updated for context APU
+21:07:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:07:49 INFO  : 'con' command is executed.
+21:07:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+21:07:49 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+21:15:02 INFO  : Disconnected from the channel tcfchan#11.
+21:15:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:15:03 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+21:15:03 INFO  : 'jtag frequency' command is executed.
+21:15:03 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+21:15:03 INFO  : Context for 'APU' is selected.
+21:15:03 INFO  : System reset is completed.
+21:15:06 INFO  : 'after 3000' command is executed.
+21:15:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+21:15:08 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+21:15:08 INFO  : Context for 'APU' is selected.
+21:15:09 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+21:15:09 INFO  : 'configparams force-mem-access 1' command is executed.
+21:15:09 INFO  : Context for 'APU' is selected.
+21:15:10 INFO  : 'ps7_init' command is executed.
+21:15:10 INFO  : 'ps7_post_config' command is executed.
+21:15:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:15:24 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:15:24 INFO  : 'configparams force-mem-access 0' command is executed.
+21:15:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:15:24 INFO  : Memory regions updated for context APU
+21:15:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:15:25 INFO  : 'con' command is executed.
+21:15:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+21:15:25 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+21:17:02 INFO  : Disconnected from the channel tcfchan#12.
+21:17:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:17:03 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+21:17:03 INFO  : 'jtag frequency' command is executed.
+21:17:03 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+21:17:03 INFO  : Context for 'APU' is selected.
+21:17:03 INFO  : System reset is completed.
+21:17:06 INFO  : 'after 3000' command is executed.
+21:17:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+21:17:08 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+21:17:08 INFO  : Context for 'APU' is selected.
+21:17:09 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+21:17:09 INFO  : 'configparams force-mem-access 1' command is executed.
+21:17:09 INFO  : Context for 'APU' is selected.
+21:17:09 INFO  : 'ps7_init' command is executed.
+21:17:09 INFO  : 'ps7_post_config' command is executed.
+21:17:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:25 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:17:25 INFO  : 'configparams force-mem-access 0' command is executed.
+21:17:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:17:25 INFO  : Memory regions updated for context APU
+21:17:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:25 INFO  : 'con' command is executed.
+21:17:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+21:17:25 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+21:37:51 INFO  : Disconnected from the channel tcfchan#13.
+21:37:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:37:52 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+21:37:52 INFO  : 'jtag frequency' command is executed.
+21:37:52 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+21:37:52 INFO  : Context for 'APU' is selected.
+21:37:52 INFO  : System reset is completed.
+21:37:55 INFO  : 'after 3000' command is executed.
+21:37:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+21:37:57 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+21:37:57 INFO  : Context for 'APU' is selected.
+21:37:58 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+21:37:58 INFO  : 'configparams force-mem-access 1' command is executed.
+21:37:58 INFO  : Context for 'APU' is selected.
+21:37:58 INFO  : 'ps7_init' command is executed.
+21:37:58 INFO  : 'ps7_post_config' command is executed.
+21:37:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:13 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:38:13 INFO  : 'configparams force-mem-access 0' command is executed.
+21:38:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:38:13 INFO  : Memory regions updated for context APU
+21:38:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:38:13 INFO  : 'con' command is executed.
+21:38:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+21:38:13 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+21:39:22 INFO  : Disconnected from the channel tcfchan#14.
+21:39:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:39:23 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+21:39:23 INFO  : 'jtag frequency' command is executed.
+21:39:23 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+21:39:23 INFO  : Context for 'APU' is selected.
+21:39:24 INFO  : System reset is completed.
+21:39:27 INFO  : 'after 3000' command is executed.
+21:39:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+21:39:28 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+21:39:28 INFO  : Context for 'APU' is selected.
+21:39:29 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+21:39:29 INFO  : 'configparams force-mem-access 1' command is executed.
+21:39:30 INFO  : Context for 'APU' is selected.
+21:39:30 INFO  : 'ps7_init' command is executed.
+21:39:30 INFO  : 'ps7_post_config' command is executed.
+21:39:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:39:44 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:39:44 INFO  : 'configparams force-mem-access 0' command is executed.
+21:39:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:39:44 INFO  : Memory regions updated for context APU
+21:39:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:39:45 INFO  : 'con' command is executed.
+21:39:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+21:39:45 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+21:41:44 INFO  : Disconnected from the channel tcfchan#15.
+21:41:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:41:45 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+21:41:45 INFO  : 'jtag frequency' command is executed.
+21:41:45 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+21:41:45 INFO  : Context for 'APU' is selected.
+21:41:46 INFO  : System reset is completed.
+21:41:49 INFO  : 'after 3000' command is executed.
+21:41:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+21:41:50 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+21:41:51 INFO  : Context for 'APU' is selected.
+21:41:52 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+21:41:52 INFO  : 'configparams force-mem-access 1' command is executed.
+21:41:52 INFO  : Context for 'APU' is selected.
+21:41:52 INFO  : 'ps7_init' command is executed.
+21:41:52 INFO  : 'ps7_post_config' command is executed.
+21:41:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:07 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:42:07 INFO  : 'configparams force-mem-access 0' command is executed.
+21:42:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:42:07 INFO  : Memory regions updated for context APU
+21:42:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:07 INFO  : 'con' command is executed.
+21:42:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+21:42:07 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'
+09:55:22 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1571924860586,  Project:1571916494578
+09:55:22 INFO  : Project lcd_dis_system_top_hw_platform_0's source hardware specification located at H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+09:55:34 INFO  : Copied contents of H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf into \lcd_dis_system_top_hw_platform_0\system.hdf.
+09:55:36 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+09:55:39 INFO  : 
+09:55:40 INFO  : Updating hardware inferred compiler options for vdma_lcd_lvds.
+09:55:40 INFO  : Clearing existing target manager status.
+09:56:00 INFO  : Disconnected from the channel tcfchan#16.
+09:56:24 INFO  : Registering command handlers for SDK TCF services
+09:56:25 INFO  : Launching XSCT server: xsct.bat -interactive H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\temp_xsdb_launch_script.tcl
+09:56:27 INFO  : XSCT server has started successfully.
+09:56:27 INFO  : Successfully done setting XSCT server connection channel  
+09:56:27 INFO  : Successfully done setting SDK workspace  
+09:56:27 INFO  : Processing command line option -hwspec H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top.hdf.
+09:56:27 INFO  : Checking for hwspec changes in the project lcd_dis_system_top_hw_platform_0.
+09:59:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:59:32 INFO  : Jtag cable 'Digilent JTAG-HS2 201706300081' is selected.
+09:59:32 INFO  : 'jtag frequency' command is executed.
+09:59:32 INFO  : Sourcing of 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl' is done.
+09:59:32 INFO  : Context for 'APU' is selected.
+09:59:32 INFO  : System reset is completed.
+09:59:35 INFO  : 'after 3000' command is executed.
+09:59:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1' command is executed.
+09:59:37 INFO  : FPGA configured successfully with bitstream "H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit"
+09:59:37 INFO  : Context for 'APU' is selected.
+09:59:37 INFO  : Hardware design information is loaded from 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf'.
+09:59:37 INFO  : 'configparams force-mem-access 1' command is executed.
+09:59:37 INFO  : Context for 'APU' is selected.
+09:59:37 INFO  : 'ps7_init' command is executed.
+09:59:37 INFO  : 'ps7_post_config' command is executed.
+09:59:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:59:52 INFO  : The application 'H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:59:52 INFO  : 'configparams force-mem-access 0' command is executed.
+09:59:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS2 201706300081" && level==0} -index 1
+fpga -file H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/lcd_dis_system_top.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+loadhw -hw H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/lcd_dis_system_top_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+dow H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug/vdma_lcd_lvds.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:59:52 INFO  : Memory regions updated for context APU
+09:59:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:59:52 INFO  : 'con' command is executed.
+09:59:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-HS2 201706300081"} -index 0
+con
+----------------End of Script----------------
+
+09:59:52 INFO  : Launch script is exported to file 'H:\FPGA\ZYNQ_PSPL\vdma_lvds_lcd\vdma_lvds_lcd.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_vdma_lcd_lvds.elf_on_local.tcl'

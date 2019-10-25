@@ -19,6 +19,9 @@
 #include "display_ctrl.h"
 #include "vga_modes.h"
 
+#include "vdma_config.h"
+#include "vtc_config.h"
+
 // Image data for each resolution
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //#include "pic_800_600.h"
@@ -43,13 +46,22 @@
  * Display Driver struct
  */
 DisplayCtrl dispCtrl;
-XAxiVdma vdma;
+//XAxiVdma vdma;
 
 /*
  * Frame buffers for video data
  */
 u8 frameBuf[DISPLAY_NUM_FRAMES][DEMO_MAX_FRAME];
 u8 *pFrames[DISPLAY_NUM_FRAMES];  //  array of pointers to the frame buffers
+
+
+#define MEM_BASE_ADDR		0x10000000
+#define BUFFER0_BASE		(MEM_BASE_ADDR)
+#define BUFFER1_BASE		(MEM_BASE_ADDR +     IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_PER_PIXEL)
+#define BUFFER2_BASE		(MEM_BASE_ADDR + 2 * IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_PER_PIXEL)
+
+
+u8 *ptempFrames[DISPLAY_NUM_FRAMES] = {(u8*)BUFFER0_BASE,(u8*)BUFFER1_BASE,(u8*)BUFFER2_BASE};
 
 /* ------------------------------------------------------------ */
 /*				Procedure Definitions							*/
@@ -59,39 +71,27 @@ int main(void)
 {
 	int i;
 	int Status;
-	XAxiVdma_Config *vdmaConfig;
+//	XAxiVdma_Config *vdmaConfig;
 
-	while(1){
+	xil_printf("VDMA test\r\n");
 
-		xil_printf("hellp");
+//	Vtc_init(&Vtc, VTC_DEV_ID, &Vtc_timing, VIDEO_RESOLUTION_WSVGA);
 
-	}
+
+
+//	Vdma_Setup_Intr_System(&Intc, &AxiVdma, VDMA_INTR_ID);
 
 	/*
 	 * Initialize an array of pointers to the 3 frame buffers
 	 */
 	for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
 	{
-		pFrames[i] = frameBuf[i];
+		pFrames[i] = ptempFrames[i];//frameBuf[i];
 	}
 
-	/*
-	 * Initialize VDMA driver, get the hardware VDMA configurations
-	 */
-	vdmaConfig = XAxiVdma_LookupConfig(VGA_VDMA_ID);
-	if (vdmaConfig == NULL)
-	{
-		xil_printf("No video DMA found for ID %d\r\n", VGA_VDMA_ID);
-	}
+	Vdma_Init(&AxiVdma, AXI_VDMA_DEV_ID);
 
-	/*
-	 * Use hardware VDMA configurations to initialize the driver
-	 */
-	Status = XAxiVdma_CfgInitialize(&vdma, vdmaConfig, vdmaConfig->BaseAddress);
-	if (Status != XST_SUCCESS)
-	{
-		xil_printf("VDMA Configuration Initialization failed %d\r\n", Status);
-	}
+	//Vdma_Start(&AxiVdma);
 
 	/*
 	 * Initialize the Display controller and start it
@@ -102,10 +102,11 @@ int main(void)
 	//VideoMode VMODE = VMODE_800x600;
 	//VideoMode VMODE = VMODE_1280x720;
 	//VideoMode VMODE = VMODE_1280x1024;
-	VideoMode VMODE = VMODE_1920x1080;
+	//VideoMode VMODE = VMODE_1920x1080;
+	VideoMode VMODE = VMODE_1366x768;
 	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-	Status = DisplayInitialize(&dispCtrl, &vdma, DISP_VTC_ID, DYNCLK_BASEADDR, pFrames, DEMO_STRIDE, VMODE);
+	Status = DisplayInitialize(&dispCtrl, &AxiVdma, DISP_VTC_ID, DYNCLK_BASEADDR, pFrames, DEMO_STRIDE, VMODE);
 	if (Status != XST_SUCCESS)
 	{
 		xil_printf("Display Ctrl initialization failed during demo initialization%d\r\n", Status);
@@ -117,7 +118,14 @@ int main(void)
 		xil_printf("Couldn't start display during demo initialization%d\r\n", Status);
 	}
 
-	DemoPrintTest(dispCtrl.framePtr[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, dispCtrl.stride);
+	xil_printf("init ok\r\n");
+	//while(1)
+	{
+
+		DemoPrintTest(dispCtrl.framePtr[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, dispCtrl.stride);
+		xil_printf("update pic data\r\n");
+	}
+
 
 	return 0;
 }
@@ -127,6 +135,8 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride)
 	u32 xcoi, ycoi;
 	u32 linesStart = 0;
 	u32 pixelIdx = 0;
+
+	//u8 vdma_pic_data
 
 	for(ycoi = 0; ycoi < height; ycoi++)
 	{
@@ -157,9 +167,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride)
 			*/
 
 			// 1920 x 1080
-			frame[linesStart + xcoi    ] = Pixel_1920_1080[pixelIdx++];
-			frame[linesStart + xcoi + 1] = Pixel_1920_1080[pixelIdx++];
-			frame[linesStart + xcoi + 2] = Pixel_1920_1080[pixelIdx++];
+			frame[linesStart + xcoi    ] = 255-ycoi;//Pixel_1920_1080[pixelIdx++];
+			frame[linesStart + xcoi + 1] = ycoi;//Pixel_1920_1080[pixelIdx++];
+			frame[linesStart + xcoi + 2] = ycoi;//Pixel_1920_1080[pixelIdx++];
 
 			//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		}

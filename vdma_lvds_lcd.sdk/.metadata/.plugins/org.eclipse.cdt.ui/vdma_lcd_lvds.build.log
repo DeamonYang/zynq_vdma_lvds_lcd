@@ -1,8 +1,27 @@
-10:26:30 **** Incremental Build of configuration Debug for project vdma_lcd_lvds ****
+10:00:19 **** Auto Build of configuration Debug for project vdma_lcd_lvds ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-make: Nothing to be done for `main-build'.
+'Building file: ../src/display_demo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_demo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/display_demo.d" -MT"src/display_demo.o" -o "src/display_demo.o" "../src/display_demo.c"
+../src/display_demo.c: In function 'DemoPrintTest':
+../src/display_demo.c:137:6: warning: unused variable 'pixelIdx' [-Wunused-variable]
+  u32 pixelIdx = 0;
+      ^~~~~~~~
+'Finished building: ../src/display_demo.c'
+' '
+'Building target: vdma_lcd_lvds.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/lib -o "vdma_lcd_lvds.elf"  ./src/display_ctrl.o ./src/display_demo.o ./src/platform.o ./src/vdma_config.o ./src/vtc_config.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vdma_lcd_lvds.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size vdma_lcd_lvds.elf  |tee "vdma_lcd_lvds.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+6275116	   1824	24908752	31185692	1dbdb1c	vdma_lcd_lvds.elf
+'Finished building: vdma_lcd_lvds.elf.size'
+' '
 
-10:26:31 Build Finished (took 349ms)
+10:00:54 Build Finished (took 35s.365ms)
 

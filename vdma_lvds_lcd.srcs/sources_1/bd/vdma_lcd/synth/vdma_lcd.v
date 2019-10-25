@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-//Date        : Wed Oct 23 16:21:09 2019
+//Date        : Thu Oct 24 13:53:17 2019
 //Host        : DESKTOP-L1VR7A3 running 64-bit major release  (build 9200)
 //Command     : generate_target vdma_lcd.bd
 //Design      : vdma_lcd
@@ -594,8 +594,7 @@ module vdma_lcd
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    clk_h_out3,
-    clk_shift_lvds,
+    clk_50m,
     lcd_data,
     lcd_de,
     lcd_hs,
@@ -622,8 +621,7 @@ module vdma_lcd
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_H_OUT3 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_H_OUT3, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 350000000, PHASE 0.0" *) output clk_h_out3;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_SHIFT_LVDS CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_SHIFT_LVDS, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 50000000, PHASE -51.0" *) output clk_shift_lvds;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_50M CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_50M, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 50000000, PHASE 0.0" *) output clk_50m;
   output [23:0]lcd_data;
   output lcd_de;
   output lcd_hs;
@@ -669,9 +667,7 @@ module vdma_lcd
   wire axis_subset_converter_0_M_AXIS_TREADY;
   wire [0:0]axis_subset_converter_0_M_AXIS_TUSER;
   wire axis_subset_converter_0_M_AXIS_TVALID;
-  wire clk_wiz_0_clk_h_out3;
   wire clk_wiz_0_clk_out1;
-  wire clk_wiz_0_clk_shift_lvds;
   wire clk_wiz_0_locked;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
@@ -782,8 +778,7 @@ module vdma_lcd
   wire v_tc_0_vtiming_out_VSYNC;
   wire [0:0]xlconstant_1_dout;
 
-  assign clk_h_out3 = clk_wiz_0_clk_h_out3;
-  assign clk_shift_lvds = clk_wiz_0_clk_shift_lvds;
+  assign clk_50m = clk_wiz_0_clk_out1;
   assign lcd_data[23:0] = v_axi4s_vid_out_0_vid_data;
   assign lcd_de = v_axi4s_vid_out_0_vid_active_video;
   assign lcd_hs = v_axi4s_vid_out_0_vid_hsync;
@@ -878,10 +873,8 @@ module vdma_lcd
         .s_axis_tuser(axi_vdma_0_M_AXIS_MM2S_TUSER),
         .s_axis_tvalid(axi_vdma_0_M_AXIS_MM2S_TVALID));
   vdma_lcd_clk_wiz_0_0 clk_wiz_0
-       (.clk_h_out3(clk_wiz_0_clk_h_out3),
-        .clk_in1(processing_system7_0_FCLK_CLK0),
+       (.clk_in1(processing_system7_0_FCLK_CLK0),
         .clk_out1(clk_wiz_0_clk_out1),
-        .clk_shift_lvds(clk_wiz_0_clk_shift_lvds),
         .locked(clk_wiz_0_locked),
         .resetn(rst_ps7_0_50M_peripheral_aresetn));
   vdma_lcd_processing_system7_0_0 processing_system7_0

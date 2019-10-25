@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="vdma_lcd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1571818891"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1571818891"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1571818891"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1571831037"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1571896403"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1571896403"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1571896403"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1571896403"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\vdma_lcd_processing_system7_0_0\vdma_lcd_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -103,14 +103,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\vdma_lcd_auto_pc_0\vdma_lcd_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="synth\vdma_lcd.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -120,6 +112,14 @@
       <File Name="sim\vdma_lcd.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\vdma_lcd_auto_pc_0\vdma_lcd_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="vdma_lcd_ooc.xdc" Type="XDC">

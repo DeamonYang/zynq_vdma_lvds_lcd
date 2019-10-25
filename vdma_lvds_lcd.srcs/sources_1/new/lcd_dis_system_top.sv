@@ -21,6 +21,7 @@
 
 
 module lcd_dis_system_top(
+    input               clk_fpga_i,
 	inout	[14:0]		DDR_addr,
 	inout	[2:0]		DDR_ba,
 	inout				DDR_cas_n,
@@ -60,7 +61,7 @@ module lcd_dis_system_top(
 	logic 			lcd_hs;
 	logic 			lcd_vs;
 	logic 			sys_rst_n;
-
+    logic           clk_zynq_50m;
 	
 	
 	vdma_lcd_wrapper zynq_sys(
@@ -85,28 +86,25 @@ module lcd_dis_system_top(
 		.FIXED_IO_ps_clk	(FIXED_IO_ps_clk	),
 		.FIXED_IO_ps_porb	(FIXED_IO_ps_porb	),
 		.FIXED_IO_ps_srstb	(FIXED_IO_ps_srstb	),
-		.clk_h_out3			(clk_h_out3			),
-		.clk_shift_lvds		(clk_shift_lvds		),
+		.clk_50m			(clk_zynq_50m		),
+//		.clk_shift_lvds		(clk_shift_lvds		),
 		.lcd_data			(lcd_data			),
 		.lcd_de				(lcd_de				),
 		.lcd_hs				(lcd_hs				),
 		.lcd_vs				(lcd_vs				),
 		.sys_rst_n			(sys_rst_n			));
-		
-	lcd_lvds#(
+	
+	lvds_lcd_controller#(
 		.DATA_IN_LEN	(DATA_IN_LEN	) ,
 		.LVDS_LANES		(LVDS_LANES		)
 	)lvds_ins_u0(
 		.rst_n_i		(sys_rst_n		),
-		.clk_i			(clk_h_out3		),
-		.clk_p_i		(clk_shift_lvds	),
-		.clk_n_i		(1'b1			),
-		.clk_dvi_i		(clk_shift_lvds	),
+		.clk_sys_i		(clk_zynq_50m	),
 		.lcd_de_i		(lcd_de			),
 		.lcd_vs_i		(lcd_vs			),
 		.lcd_hs_i		(lcd_hs			),
-//		.lcd_r_i		(lcd_data[23:16]),
-		.lcd_r_i		(8'hAA          ),
+		.lcd_r_i		(lcd_data[23:16]),
+//		.lcd_r_i		(8'hAA          ),
 		.lcd_g_i		(lcd_data[15:8]	),
 		.lcd_b_i		(lcd_data[7:0]	),
 		.lvds_data_p_o	(lvds_data_p_o	),
@@ -115,9 +113,16 @@ module lcd_dis_system_top(
 		.lvds_clk_n_o	(lvds_clk_n_o	)
 	);	
 	
+//		ila_0 log_ila (
+//            .clk(clk_zynq_50m), // input wire clk
+//            .probe0(lcd_vs), // input wire [0:0]  probe0  
+//            .probe1(lcd_de) // input wire [0:0]  probe1
+//        );
+	
+	
 	 blinblin_led led_ins(
 		.rst_n_i	(sys_rst_n),
-		.clk_i		(clk_shift_lvds),
+		.clk_i		(clk_zynq_50m),
 		.led		(led_o)
        );
 //	assign led_o = ~clk_shift_lvds;

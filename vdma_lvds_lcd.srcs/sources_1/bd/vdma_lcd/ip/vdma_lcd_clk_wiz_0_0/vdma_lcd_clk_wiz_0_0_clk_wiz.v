@@ -56,9 +56,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1____50.000______0.000______50.0______145.943_____94.994
-// clk_shift_lvds____50.000____-49.286______57.1______145.943_____94.994
-// clk_h_out3___350.000______0.000______50.0_______99.963_____94.994
+// clk_out1____50.000______0.000______50.0______151.636_____98.575
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -72,8 +70,6 @@ module vdma_lcd_clk_wiz_0_0_clk_wiz
  (// Clock in ports
   // Clock out ports
   output        clk_out1,
-  output        clk_shift_lvds,
-  output        clk_h_out3,
   // Status and control signals
   input         resetn,
   output        locked,
@@ -113,7 +109,9 @@ wire clk_in2_vdma_lcd_clk_wiz_0_0;
   wire        clkfbout_buf_vdma_lcd_clk_wiz_0_0;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
+   wire clkout1_unused;
    wire clkout1b_unused;
+   wire clkout2_unused;
    wire clkout2b_unused;
    wire clkout3_unused;
    wire clkout3b_unused;
@@ -130,21 +128,13 @@ wire clk_in2_vdma_lcd_clk_wiz_0_0;
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (10.500),
+    .CLKFBOUT_MULT_F      (10.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (21.000),
+    .CLKOUT0_DIVIDE_F     (20.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKOUT1_DIVIDE       (21),
-    .CLKOUT1_PHASE        (-49.286),
-    .CLKOUT1_DUTY_CYCLE   (0.571),
-    .CLKOUT1_USE_FINE_PS  ("FALSE"),
-    .CLKOUT2_DIVIDE       (3),
-    .CLKOUT2_PHASE        (0.000),
-    .CLKOUT2_DUTY_CYCLE   (0.500),
-    .CLKOUT2_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.000))
   mmcm_adv_inst
     // Output clocks
@@ -153,9 +143,9 @@ wire clk_in2_vdma_lcd_clk_wiz_0_0;
     .CLKFBOUTB           (clkfboutb_unused),
     .CLKOUT0             (clk_out1_vdma_lcd_clk_wiz_0_0),
     .CLKOUT0B            (clkout0b_unused),
-    .CLKOUT1             (clk_shift_lvds_vdma_lcd_clk_wiz_0_0),
+    .CLKOUT1             (clkout1_unused),
     .CLKOUT1B            (clkout1b_unused),
-    .CLKOUT2             (clk_h_out3_vdma_lcd_clk_wiz_0_0),
+    .CLKOUT2             (clkout2_unused),
     .CLKOUT2B            (clkout2b_unused),
     .CLKOUT3             (clkout3_unused),
     .CLKOUT3B            (clkout3b_unused),
@@ -208,14 +198,6 @@ wire clk_in2_vdma_lcd_clk_wiz_0_0;
    (.O   (clk_out1),
     .I   (clk_out1_vdma_lcd_clk_wiz_0_0));
 
-
-  BUFG clkout2_buf
-   (.O   (clk_shift_lvds),
-    .I   (clk_shift_lvds_vdma_lcd_clk_wiz_0_0));
-
-  BUFG clkout3_buf
-   (.O   (clk_h_out3),
-    .I   (clk_h_out3_vdma_lcd_clk_wiz_0_0));
 
 
 

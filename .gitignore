@@ -6,3 +6,6 @@ vdma_lvds_lcd.ip_user_files
 vdma_lvds_lcd.runs
 vdma_lvds_lcd.sim
 
+vdma_lvds_lcd.sdk/.metadata/.plugins
+vdma_lvds_lcd.sdk/vdma_lcd_lvds/Debug
+vdma_lvds_lcd.sdk/.metadata

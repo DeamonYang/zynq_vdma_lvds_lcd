@@ -56,9 +56,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1____50.000______0.000______50.0______145.943_____94.994
-// clk_shift_lvds____50.000____-49.286______57.1______145.943_____94.994
-// clk_h_out3___350.000______0.000______50.0_______99.963_____94.994
+// clk_out1____50.000______0.000______50.0______151.636_____98.575
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -67,14 +65,12 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "vdma_lcd_clk_wiz_0_0,clk_wiz_v6_0_1_0_0,{component_name=vdma_lcd_clk_wiz_0_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "vdma_lcd_clk_wiz_0_0,clk_wiz_v6_0_1_0_0,{component_name=vdma_lcd_clk_wiz_0_0,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module vdma_lcd_clk_wiz_0_0 
  (
   // Clock out ports
   output        clk_out1,
-  output        clk_shift_lvds,
-  output        clk_h_out3,
   // Status and control signals
   input         resetn,
   output        locked,
@@ -86,8 +82,6 @@ module vdma_lcd_clk_wiz_0_0
   (
   // Clock out ports  
   .clk_out1(clk_out1),
-  .clk_shift_lvds(clk_shift_lvds),
-  .clk_h_out3(clk_h_out3),
   // Status and control signals               
   .resetn(resetn), 
   .locked(locked),

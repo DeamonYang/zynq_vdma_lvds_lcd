@@ -36,14 +36,33 @@ typedef struct {
 	double freq; 	 /* Pixel Clock frequency */
 } VideoMode;
 
+static const VideoMode VMODE_1366x768 = {
+	.label = "1366x768@50Hz",
+	.width = 1366,
+	.height = 768,
+	.hps = 1370,
+	.hpe = 1375,
+	.hmax = 1489,
+	.hpol = 1,
+
+	.vps = 770,
+	.vpe = 775,
+	.vmax = 780,
+	.vpol = 1,
+	.freq = 50
+};
+
+
 static const VideoMode VMODE_640x480 = {
 	.label = "640x480@60Hz",
 	.width = 640,
-	.height = 480,
+
 	.hps = 656,
 	.hpe = 752,
 	.hmax = 799,
 	.hpol = 0,
+
+	.height = 480,
 	.vps = 490,
 	.vpe = 492,
 	.vmax = 524,
@@ -110,6 +129,8 @@ static const VideoMode VMODE_1920x1080 = {
 	.vpol = 1,
 	.freq = 148.5
 };
+
+
 
 
 #endif /* VGA_MODES_H_ */

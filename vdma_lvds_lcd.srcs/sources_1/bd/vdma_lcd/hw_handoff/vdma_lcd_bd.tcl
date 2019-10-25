@@ -159,8 +159,7 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
-  set clk_h_out3 [ create_bd_port -dir O -type clk clk_h_out3 ]
-  set clk_shift_lvds [ create_bd_port -dir O -type clk clk_shift_lvds ]
+  set clk_50m [ create_bd_port -dir O -type clk clk_50m ]
   set lcd_data [ create_bd_port -dir O -from 23 -to 0 lcd_data ]
   set lcd_de [ create_bd_port -dir O lcd_de ]
   set lcd_hs [ create_bd_port -dir O lcd_hs ]
@@ -203,29 +202,30 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {145.943} \
-   CONFIG.CLKOUT1_PHASE_ERROR {94.994} \
+   CONFIG.CLKOUT1_JITTER {151.636} \
+   CONFIG.CLKOUT1_PHASE_ERROR {98.575} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50} \
    CONFIG.CLKOUT2_JITTER {145.943} \
    CONFIG.CLKOUT2_PHASE_ERROR {94.994} \
    CONFIG.CLKOUT2_REQUESTED_DUTY_CYCLE {57.1} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {50} \
    CONFIG.CLKOUT2_REQUESTED_PHASE {-51} \
-   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT2_USED {false} \
    CONFIG.CLKOUT3_JITTER {99.963} \
    CONFIG.CLKOUT3_PHASE_ERROR {94.994} \
    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {350} \
-   CONFIG.CLKOUT3_USED {true} \
+   CONFIG.CLKOUT3_USED {false} \
    CONFIG.CLK_OUT2_PORT {clk_shift_lvds} \
    CONFIG.CLK_OUT3_PORT {clk_h_out3} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {10.500} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {21.000} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {21} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {10.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {20.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
    CONFIG.MMCM_CLKOUT1_DUTY_CYCLE {0.571} \
    CONFIG.MMCM_CLKOUT1_PHASE {-49.286} \
-   CONFIG.MMCM_CLKOUT2_DIVIDE {3} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.NUM_OUT_CLKS {3} \
+   CONFIG.NUM_OUT_CLKS {1} \
+   CONFIG.PRIM_IN_FREQ {100.000} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
  ] $clk_wiz_0
@@ -278,6 +278,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_CLK1_PORT {0} \
    CONFIG.PCW_EN_QSPI {1} \
    CONFIG.PCW_EN_UART1 {1} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {4} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {4} \
    CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
@@ -444,9 +445,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net v_tc_0_vtiming_out [get_bd_intf_pins v_axi4s_vid_out_0/vtiming_in] [get_bd_intf_pins v_tc_0/vtiming_out]
 
   # Create port connections
-  connect_bd_net -net clk_wiz_0_clk_h_out3 [get_bd_ports clk_h_out3] [get_bd_pins clk_wiz_0/clk_h_out3]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
-  connect_bd_net -net clk_wiz_0_clk_shift_lvds [get_bd_ports clk_shift_lvds] [get_bd_pins clk_wiz_0/clk_shift_lvds]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports clk_50m] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
   connect_bd_net -net clk_wiz_0_locked [get_bd_ports sys_rst_n] [get_bd_pins clk_wiz_0/locked] [get_bd_pins util_vector_logic_0/Op1] [get_bd_pins v_axi4s_vid_out_0/aclken] [get_bd_pins v_axi4s_vid_out_0/aresetn] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_ce] [get_bd_pins v_tc_0/clken] [get_bd_pins v_tc_0/resetn]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_smc/aclk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins axis_subset_converter_0/aclk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_tc_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]

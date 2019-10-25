@@ -147,7 +147,7 @@ int DisplayStart(DisplayCtrl *dispPtr)
 	XVtc_Timing vtcTiming;
 	XVtc_SourceSelect SourceSelect;
 
-	xdbg_printf(XDBG_DEBUG_GENERAL, "display start entered\n\r");
+	xil_printf( "display start entered\r\n");
 	/*
 	 * If already started, do nothing
 	 */
@@ -230,28 +230,32 @@ int DisplayStart(DisplayCtrl *dispPtr)
 	 * transferred until the disp_ctrl core signals the VDMA core by pulsing fsync.
 	 */
 
+
+
+	xdbg_printf( "preform vdma  transfer \r\n");
+
 	Status = XAxiVdma_DmaConfig(dispPtr->vdma, XAXIVDMA_READ, &(dispPtr->vdmaConfig));
 	if (Status != XST_SUCCESS)
 	{
-		xdbg_printf(XDBG_DEBUG_GENERAL, "Read channel config failed %d\r\n", Status);
+		xil_printf( "Read channel config failed %d\r\n", Status);
 		return XST_FAILURE;
 	}
 	Status = XAxiVdma_DmaSetBufferAddr(dispPtr->vdma, XAXIVDMA_READ, dispPtr->vdmaConfig.FrameStoreStartAddr);
 	if (Status != XST_SUCCESS)
 	{
-		xdbg_printf(XDBG_DEBUG_GENERAL, "Read channel set buffer address failed %d\r\n", Status);
+		xil_printf( "Read channel set buffer address failed %d\r\n", Status);
 		return XST_FAILURE;
 	}
 	Status = XAxiVdma_DmaStart(dispPtr->vdma, XAXIVDMA_READ);
 	if (Status != XST_SUCCESS)
 	{
-		xdbg_printf(XDBG_DEBUG_GENERAL, "Start read transfer failed %d\r\n", Status);
+		xil_printf( "Start read transfer failed %d\r\n", Status);
 		return XST_FAILURE;
 	}
 	Status = XAxiVdma_StartParking(dispPtr->vdma, dispPtr->curFrame, XAXIVDMA_READ);
 	if (Status != XST_SUCCESS)
 	{
-		xdbg_printf(XDBG_DEBUG_GENERAL, "Unable to park the channel %d\r\n", Status);
+		xil_printf( "Unable to park the channel %d\r\n", Status);
 		return XST_FAILURE;
 	}
 

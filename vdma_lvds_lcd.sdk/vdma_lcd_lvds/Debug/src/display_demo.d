@@ -20,7 +20,13 @@ src/display_demo.o src/display_demo.o: ../src/display_demo.c \
  ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xil_assert.h \
  ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xvtc.h \
  ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xvtc_hw.h \
- ../src/pic_1920_1080.h
+ ../src/vdma_config.h \
+ ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xil_exception.h \
+ ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xdebug.h \
+ ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xscugic.h \
+ ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xscugic_hw.h \
+ ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xil_exception.h \
+ ../src/vtc_config.h ../src/pic_1920_1080.h
 
 ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xil_types.h:
 
@@ -67,5 +73,19 @@ src/display_demo.o src/display_demo.o: ../src/display_demo.c \
 ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xvtc.h:
 
 ../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xvtc_hw.h:
+
+../src/vdma_config.h:
+
+../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xil_exception.h:
+
+../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xdebug.h:
+
+../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xscugic.h:
+
+../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xscugic_hw.h:
+
+../../vdma_lcd_lvds_bsp/ps7_cortexa9_0/include/xil_exception.h:
+
+../src/vtc_config.h:
 
 ../src/pic_1920_1080.h:

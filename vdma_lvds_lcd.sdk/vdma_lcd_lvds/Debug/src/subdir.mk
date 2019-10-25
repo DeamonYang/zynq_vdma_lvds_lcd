@@ -9,17 +9,23 @@ LD_SRCS += \
 C_SRCS += \
 ../src/display_ctrl.c \
 ../src/display_demo.c \
-../src/platform.c 
+../src/platform.c \
+../src/vdma_config.c \
+../src/vtc_config.c 
 
 OBJS += \
 ./src/display_ctrl.o \
 ./src/display_demo.o \
-./src/platform.o 
+./src/platform.o \
+./src/vdma_config.o \
+./src/vtc_config.o 
 
 C_DEPS += \
 ./src/display_ctrl.d \
 ./src/display_demo.d \
-./src/platform.d 
+./src/platform.d \
+./src/vdma_config.d \
+./src/vtc_config.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

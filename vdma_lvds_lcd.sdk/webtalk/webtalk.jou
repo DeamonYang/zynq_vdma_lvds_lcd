@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# 
+# Start of session at: Thu Oct 24 19:39:33 2019
+# Process ID: 24716
+# Current directory: H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/webtalk/webtalk.log
+# Journal file: H:/FPGA/ZYNQ_PSPL/vdma_lvds_lcd/vdma_lvds_lcd.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
